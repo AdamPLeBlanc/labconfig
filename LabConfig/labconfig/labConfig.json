@@ -1,0 +1,38 @@
+{"InfoCmds":{
+    "IOS":"getInfoScripts/getIosInfo.py %s",
+    "CES":"getInfoScripts/getCesInfo.py %s",
+    "PTAS":"getInfoScripts/getPtasInfo.py %s",
+    "Audio":"getInfoScripts/getAudioInfo.py %s",
+    "IG":"getInfoScripts/getIgInfo.py %s"},
+"TrainerIps":{
+    "MIPS":{
+        "IOS":"132.224.0.1",
+        "CES":"132.224.0.2",
+        "PTAS":"132.224.0.3",
+        "Audio":"132.224.0.4",
+        "IG":"132.224.0.5"},
+    "RST":{
+        "IOS":"132.224.4.1",
+        "CES":"132.224.4.2",
+        "PTAS":"132.224.4.3",
+        "Audio":"132.224.4.4",
+        "IG":"132.224.4.5"},
+    "WTT020":{
+        "IOS":"132.224.20.1",
+        "CES":"132.224.20.2",
+        "PTAS":"132.224.20.3",
+        "Audio":"132.224.20.4",
+        "IG":"132.224.20.5"},
+    "WTT021":{
+        "IOS":"132.224.21.1",
+        "CES":"132.224.21.2",
+        "PTAS":"132.224.21.3",
+        "Audio":"132.224.21.4",
+        "IG":"132.224.21.5"},
+    "WTT101":{
+        "IOS":"132.224.101.1",
+        "CES":"132.224.101.2",
+        "PTAS":"132.224.101.3",
+        "Audio":"132.224.101.4",
+        "IG":"132.224.101.5"}}
+}
