@@ -1,17 +1,20 @@
-
-.colHdr
-{
-    background-color: #009900;
-    color:#FFFFFF;
-    font-size: 1.5em;
-}
 div
 {
     margin:10px;
 }
-th.colHdr
+.labCfgColHdr
 {
     width:20%;
+    background-color: #009900;
+    color:#FFFFFF;
+    font-size: 1.5em;
+}
+.bliInfoColHdr
+{
+    width:15%;
+    background-color: #009900;
+    color:#FFFFFF;
+    font-size: 1.5em;
 }
 td
 {
@@ -21,10 +24,6 @@ td
 {
     margin-right: auto;
     margin-left: auto;
-}
-table
-{
-    min-width:60%
 }
 table,td,th
 {
@@ -63,7 +62,7 @@ li.menu
 a.menu:link,a.menu:visited
 {
     display:inline-block;
-    width:120px;
+    width:180px;
     font-weight:bold;
     color:#FFFFFF;
     background-color:#009900;
