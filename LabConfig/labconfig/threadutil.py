@@ -7,7 +7,7 @@ import Queue
 
 #start using functiools.partial when moved to system with python >= v2.5
 class CmdItem(object):
-    def __init__(self,func,args=None,kwargs=None):
+    def __init__(self,func,*args,**kwargs):
         self.func = func
         self.args = args
         if self.args == None:
@@ -39,9 +39,9 @@ class ProcessThread(threading.Thread):
 
 class ThreadManager(object):
 
-    def __init__(self,cmdList,results=None,maxThreads=3,verbose=False):
+    def __init__(self,cmdList,results=None,maxThreads=3,minCmdsPerThread=5,verbose=False):
         self.maxThreads = maxThreads
-        self.minCmdsPerThread = 5
+        self.minCmdsPerThread = minCmdsPerThread
         self.procQ = Queue.Queue()
         self.results = results
         map(self.procQ.put,cmdList) #add all items in cmdList to input Queue
@@ -84,7 +84,7 @@ class ThreadManager(object):
                         threads.append(t)
 
                     #remove dead threads
-                    threads = [t for t in threads if t.isAlived()]
+                    threads = [t for t in threads if t.isAlive()]
 
                     #start quiting process if threads have all finished
                     if not threads:
@@ -134,7 +134,7 @@ class ThreadManager(object):
 
             #print stats if in verbose mode
             if self.verbose:
-                totalTime = stopTime = startTime
+                totalTime = stopTime - startTime
                 completedCmds = self.__totalCmds = cmdsLeft
                 if completedCmds:
                     tPerCmd = totalTime/completedCmds

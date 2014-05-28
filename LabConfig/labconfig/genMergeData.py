@@ -58,8 +58,8 @@ class BliFileChangeCollection(object):
             t = 2
             return ' ' * t * tNum
 
-        oStream.write('<?xml version="1.0" encoding=utf-8" ?>\n')
-        oStream.write('<XmlBliFileChangeCollection xmlns:xsi=http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">\n')
+        oStream.write('<?xml version="1.0" encoding="utf-8" ?>\n')
+        oStream.write('<XmlBliFileChangeCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">\n')
         oStream.write('%s<historyStart>%s</historyStart>\n' % (getTabs(1),self.startDate))
         oStream.write('%s<historyEnd>%s</historyEnd>\n' % (getTabs(1),self.endDate))
         oStream.write('%s<backlogItemChanges>\n' % getTabs(1))
@@ -75,7 +75,7 @@ class BliFileChangeCollection(object):
                 oStream.write('%s<FullPath>%s</FullPath>\n' % (getTabs(6),c.path))
                 oStream.write('%s<AttributeBacklogIds>\n' % getTabs(6))
                 for id in c.idList:
-                    oStream.write('%s<string>%s</string\n' % (getTabs(7),id))
+                    oStream.write('%s<string>%s</string>\n' % (getTabs(7),id))
                 oStream.write('%s</AttributeBacklogIds>\n' % getTabs(6))
                 oStream.write('%s<CreationDate>%s</CreationDate>\n' % (getTabs(6),c.createDate))
                 oStream.write('%s<Owner>%s</Owner>\n' % (getTabs(6),c.owner))
@@ -83,8 +83,8 @@ class BliFileChangeCollection(object):
             oStream.write('%s</ArrayOfBacklogItemFileChange>\n' % getTabs(4))
             oStream.write('%s</value>\n' % getTabs(3))
             oStream.write('%s</item>\n' % getTabs(2))
-        oStream.write('%s<backlogItemChanges>\n' % getTabs(1))
-        oStream.write('%s</XmlBliFileChangeCollection>\n')
+        oStream.write('%s</backlogItemChanges>\n' % getTabs(1))
+        oStream.write('</XmlBliFileChangeCollection>\n')
 
     def fromXml(dataSource):
         def getNodeValue(elemList): # return string value of first node in list and an empty string if no value on node
